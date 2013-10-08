@@ -87,7 +87,9 @@ static void engine_draw_frame(Engine* engine, const cv::Mat& frame)
     {
         unsigned char* line = (unsigned char*)pixels + left_indent*4*sizeof(unsigned char);
         size_t line_size = std::min(frame.cols, buffer.width)*4*sizeof(unsigned char);
+        LOGI("Line size: %i\n", line_size);
         memcpy(line, frame.ptr<unsigned char>(yy), line_size);
+        LOGI("Successful memcpy\n");
         // go to next line
         pixels = (int32_t*)pixels + buffer.stride;
     }
