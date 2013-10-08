@@ -1,5 +1,3 @@
-#include <cstring>
-
 #include <android_native_app_glue.h>
 
 #include <errno.h>
@@ -22,8 +20,6 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
-
-using namespace std;
 
 struct Engine
 {
@@ -72,10 +68,9 @@ static cv::Size calc_optimal_camera_resolution(const char* supported, int width,
 
 static void engine_draw_frame(Engine* engine, const cv::Mat& frame)
 {
-    LOGI("IN DRAW FRAME");
     if (engine->app->window == NULL)
         return; // No window.
-    LOGI("THERE IS A WINDOW");
+
     ANativeWindow_Buffer buffer;
     if (ANativeWindow_lock(engine->app->window, &buffer, NULL) < 0)
     {
@@ -84,30 +79,19 @@ static void engine_draw_frame(Engine* engine, const cv::Mat& frame)
     }
 
     void* pixels = buffer.bits;
-    
-    LOGI("PIXELS FETCHED");
 
     int left_indent = (buffer.width-frame.cols)/2;
-    LOGI("AFTER LEFT INDENT");
     int top_indent = (buffer.height-frame.rows)/2;
-    LOGI("AFTER RIGHT IDENT");
 
-
-    LOGI("BEFORE FOR LOOP");
-    for (int yy = top_indent; yy < min(frame.rows+top_indent, buffer.height); yy++)
+    for (int yy = top_indent; yy < std::min(frame.rows+top_indent, buffer.height); yy++)
     {
-        LOGI("BEGIN ITER");
         unsigned char* line = (unsigned char*)pixels + left_indent*4*sizeof(unsigned char);
-        size_t line_size = min(frame.cols, buffer.width)*4*sizeof(unsigned char);
+        size_t line_size = std::min(frame.cols, buffer.width)*4*sizeof(unsigned char);
         memcpy(line, frame.ptr<unsigned char>(yy), line_size);
-        LOGI("AFTER MEMCPY");
         // go to next line
         pixels = (int32_t*)pixels + buffer.stride;
-        LOGI("END ITER");
     }
-    LOGI("BEFORE UNLOCK AND POST");
     ANativeWindow_unlockAndPost(engine->app->window);
-    LOGI("END OF engine_draw_frame");
 }
 
 static void engine_handle_cmd(android_app* app, int32_t cmd)
@@ -144,7 +128,7 @@ static void engine_handle_cmd(android_app* app, int32_t cmd)
                     engine->capture->set(CV_CAP_PROP_FRAME_HEIGHT, camera_resolution.height);
                 }
 
-                float scale = min((float)view_width/camera_resolution.width,
+                float scale = std::min((float)view_width/camera_resolution.width,
                                        (float)view_height/camera_resolution.height);
 
                 if (ANativeWindow_setBuffersGeometry(app->window, (int)(view_width/scale),
@@ -180,7 +164,7 @@ void android_main(android_app* app)
 
     float fps = 0;
     cv::Mat drawing_frame;
-    queue<int64> time_queue;
+    std::queue<int64> time_queue;
 
     // loop waiting for stuff to do.
     while (1)
@@ -200,7 +184,7 @@ void android_main(android_app* app)
             }
 
             // Check if we are exiting.
-            if (app != NULL && app->destroyRequested != 0)
+            if (app->destroyRequested != 0)
             {
                 LOGI("Engine thread destroy requested!");
                 return;
@@ -214,20 +198,14 @@ void android_main(android_app* app)
         // Capture frame from camera and draw it
         if (!engine.capture.empty())
         {
-            LOGI("UNEMPTY FRAME");
-            if (engine.capture->grab()) {
+            if (engine.capture->grab())
                 engine.capture->retrieve(drawing_frame, CV_CAP_ANDROID_COLOR_FRAME_RGBA);
-                LOGI("THERE'S A CAPTURE FROM THE ENGINE");
-            }
-           
-            char buffer[256];
-            sprintf(buffer, "Display performance: %dx%d @ %.3f", drawing_frame.cols, drawing_frame.rows, fps);
-            LOGI("AFTER SPRINTF");
-            cv::putText(drawing_frame, string(buffer), cv::Point(8,64),
+
+             char buffer[256];
+             sprintf(buffer, "Display performance: %dx%d @ %.3f", drawing_frame.cols, drawing_frame.rows, fps);
+             cv::putText(drawing_frame, std::string(buffer), cv::Point(8,64),
                          cv::FONT_HERSHEY_COMPLEX_SMALL, 1, cv::Scalar(0,255,0,255));
-            LOGI("AFTER PUT TEXT");
-            engine_draw_frame(&engine, drawing_frame);
-            LOGI("ENGINE DREW A FRAME");
+             engine_draw_frame(&engine, drawing_frame);
         }
 
         if (time_queue.size() >= 2)

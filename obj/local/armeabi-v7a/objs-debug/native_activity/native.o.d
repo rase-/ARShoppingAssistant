@@ -1,7 +1,9 @@
 obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring \
  /home/tonykova/workspace/adt/ndk/sources/android/native_app_glue/android_native_app_glue.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/poll.h \
+ /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
+ /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
+ /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/android/api-level.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/linux/poll.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/poll.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/pthread.h \
@@ -30,6 +32,8 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/machine/limits.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/syslimits.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/page.h \
+ /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/string.h \
+ /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/malloc.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/signal.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm-generic/signal.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/sigcontext.h \
@@ -74,11 +78,15 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
  ../../sdk/native/jni/include/opencv2/highgui/highgui.hpp \
  ../../sdk/native/jni/include/opencv2/highgui/highgui_c.h
 
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring:
-
 /home/tonykova/workspace/adt/ndk/sources/android/native_app_glue/android_native_app_glue.h:
 
 /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/poll.h:
+
+/home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/cdefs.h:
+
+/home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h:
+
+/home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/android/api-level.h:
 
 /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/linux/poll.h:
 
@@ -135,6 +143,10 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/sys/syslimits.h:
 
 /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/page.h:
+
+/home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/string.h:
+
+/home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/malloc.h:
 
 /home/tonykova/workspace/adt/ndk/platforms/android-9/arch-arm/usr/include/asm/signal.h:
 
