@@ -1,0 +1,10 @@
+This package is created to help understand the tutorial of buliding Android NDK project using SIFT or SURF with OpenCV:
+https://sites.google.com/site/wghsite/technical-notes/sift_surf_opencv_android
+
+You can modify the code or use it in your project.
+
+The package contains
+- files_needed: necessary files extracted from OpenCV source package. 
+- nonfree_opencv_android: android NDK project used to compile libnonfree.so
+- sift_opencv_android: an example test program using libnonfree.so and libopencv_java.so
+- compiled_lib: prebuilt libnonfree.so and libopencv_java.so. You can directly use them to build your application.

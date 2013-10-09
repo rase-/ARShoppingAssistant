@@ -1,0 +1,2 @@
+1. Please put "nonfree" folder into OpenCV-2.4.5-android-sdk\sdk\native\jni\include\opencv2\
+2. The "src" folder contains the cpp files implementing SIFT and SURF. Please refer to the tutorial to compile them.
