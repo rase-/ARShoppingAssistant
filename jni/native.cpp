@@ -14,6 +14,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/nonfree/nonfree.hpp>
+#include <opencv2/nonfree/features2d.hpp>
 
 #define  LOG_TAG    "OCV:libnative_activity"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
@@ -21,13 +23,30 @@
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
+using namespace cv;
+
+static Mat* detect_and_draw_features(Mat& image)
+{
+    vector<KeyPoint> keypoints;
+    Mat descriptors;
+    
+    SurfFeatureDetector detector;
+    detector.detect(image, keypoints);
+    detector.compute(image, keypoints, descriptors);
+
+    Mat* outputImg = new Mat();
+    Scalar keypointColor = Scalar(255,0,0);
+    drawKeypoints(image, keypoints, *outputImg, keypointColor, DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+    return outputImg;
+}
+
 struct Engine
 {
     android_app* app;
-    cv::Ptr<cv::VideoCapture> capture;
+    Ptr<VideoCapture> capture;
 };
 
-static cv::Size calc_optimal_camera_resolution(const char* supported, int width, int height)
+static Size calc_optimal_camera_resolution(const char* supported, int width, int height)
 {
     int frame_width = 0;
     int frame_height = 0;
@@ -63,10 +82,10 @@ static cv::Size calc_optimal_camera_resolution(const char* supported, int width,
 
     } while(supported[idx-1] != '\0');
 
-    return cv::Size(frame_width, frame_height);
+    return Size(frame_width, frame_height);
 }
 
-static void engine_draw_frame(Engine* engine, const cv::Mat& frame)
+static void engine_draw_frame(Engine* engine, const Mat& frame)
 {
     if (engine->app->window == NULL)
         return; // No window.
@@ -106,7 +125,7 @@ static void engine_handle_cmd(android_app* app, int32_t cmd)
             {
                 LOGI("APP_CMD_INIT_WINDOW");
 
-                engine->capture = new cv::VideoCapture(0);
+                engine->capture = new VideoCapture(0);
 
                 union {double prop; const char* name;} u;
                 u.prop = engine->capture->get(CV_CAP_PROP_SUPPORTED_PREVIEW_SIZES_STRING);
@@ -114,13 +133,13 @@ static void engine_handle_cmd(android_app* app, int32_t cmd)
                 int view_width = ANativeWindow_getWidth(app->window);
                 int view_height = ANativeWindow_getHeight(app->window);
 
-                cv::Size camera_resolution;
+                Size camera_resolution;
                 if (u.name)
                     camera_resolution = calc_optimal_camera_resolution(u.name, 640, 480);
                 else
                 {
                     LOGE("Cannot get supported camera camera_resolutions");
-                    camera_resolution = cv::Size(ANativeWindow_getWidth(app->window),
+                    camera_resolution = Size(ANativeWindow_getWidth(app->window),
                                           ANativeWindow_getHeight(app->window));
                 }
 
@@ -165,7 +184,7 @@ void android_main(android_app* app)
     engine.app = app;
 
     float fps = 0;
-    cv::Mat drawing_frame;
+    Mat drawing_frame;
     std::queue<int64> time_queue;
 
     // loop waiting for stuff to do.
@@ -194,7 +213,7 @@ void android_main(android_app* app)
         }
 
         int64 then;
-        int64 now = cv::getTickCount();
+        int64 now = getTickCount();
         time_queue.push(now);
 
         // Capture frame from camera and draw it
@@ -205,8 +224,8 @@ void android_main(android_app* app)
 
              char buffer[256];
              sprintf(buffer, "Display performance: %dx%d @ %.3f", drawing_frame.cols, drawing_frame.rows, fps);
-             cv::putText(drawing_frame, std::string(buffer), cv::Point(8,64),
-                         cv::FONT_HERSHEY_COMPLEX_SMALL, 1, cv::Scalar(0,255,0,255));
+             putText(drawing_frame, std::string(buffer), Point(8,64),
+                         FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(0,255,0,255));
              engine_draw_frame(&engine, drawing_frame);
         }
 
@@ -218,6 +237,6 @@ void android_main(android_app* app)
         if (time_queue.size() >= 25)
             time_queue.pop();
 
-        fps = time_queue.size() * (float)cv::getTickFrequency() / (now-then);
+        fps = time_queue.size() * (float)getTickFrequency() / (now-then);
     }
 }
