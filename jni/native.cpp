@@ -24,7 +24,7 @@
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-#define DETECTION_FRAME 30
+#define DETECTION_FRAME 15
 
 using namespace cv;
 
@@ -38,7 +38,7 @@ static void detect_and_draw_features(Mat& image)
     Mat surf_descriptors;
     Mat freak_descriptors;
     
-    int min_hessian = 900;
+    int min_hessian = 400;
     SurfFeatureDetector surf_detector(min_hessian);
     FREAK freak_descriptor;
     surf_detector.detect(image, keypoints);
@@ -50,7 +50,7 @@ static void detect_and_draw_features(Mat& image)
         LOGI("keypoints[%i]: %f %f %f\n", i, keypoints[i].pt.x, keypoints[i].pt.y, keypoints[i].size);
     }
     
-    Scalar keypointColor = Scalar(231, 84, 128);
+    //Scalar keypointColor = Scalar(231, 84, 128);
     //drawKeypoints(image, keypoints, target_img, keypointColor, DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 }
 
@@ -125,9 +125,7 @@ static void engine_draw_frame(Engine* engine, const Mat& frame)
     {
         unsigned char* line = (unsigned char*)pixels + left_indent*4*sizeof(unsigned char);
         size_t line_size = std::min(frame.cols, buffer.width)*4*sizeof(unsigned char);
-        LOGI("Line size: %i\n", line_size);
         memcpy(line, frame.ptr<unsigned char>(yy), line_size);
-        LOGI("Successful memcpy\n");
         // go to next line
         pixels = (int32_t*)pixels + buffer.stride;
     }
