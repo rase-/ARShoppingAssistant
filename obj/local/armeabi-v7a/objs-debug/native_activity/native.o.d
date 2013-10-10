@@ -60,17 +60,16 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/memory.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/math.h \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
+ /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/thread \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/assert.h \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/complex \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/limits \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/imgproc.hpp \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/types_c.h \
@@ -206,6 +205,8 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/queue:
 
+/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/thread:
+
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp:
 
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h:
@@ -216,8 +217,6 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm:
 
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath:
-
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/complex:
@@ -225,8 +224,6 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map:
 
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp:
-
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/limits:
 
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp:
 

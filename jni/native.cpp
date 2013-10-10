@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <queue>
+#include <boost/thread>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -23,6 +24,10 @@
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
+#define DETECTION_FRAME 15
+
+int frame_num = 0;
+
 using namespace cv;
 
 static void detect_and_draw_features(Mat& image, Mat& target_img)
@@ -31,16 +36,20 @@ static void detect_and_draw_features(Mat& image, Mat& target_img)
     Mat surf_descriptors;
     Mat freak_descriptors;
     
-    SurfFeatureDetector surf_detector;
+    int min_hessian = 900;
+    SurfFeatureDetector surf_detector(min_hessian);
     FREAK freak_descriptor;
     surf_detector.detect(image, keypoints);
     //surf_detector.compute(image, keypoints, surf_descriptors);
     //freak_descriptor.compute(image, keypoints, freak_descriptors);
     
     LOGI("Number of SURF keypoints %i\n", keypoints.size());
+    for (int i = 0; i < keypoints.size(); i++) {
+        LOGI("keypoints[%i]: %f %f %f\n", i, keypoints[i].pt.x, keypoints[i].pt.y, keypoints[i].size);
+    }
     
-    Scalar keypointColor = Scalar(0,0,255);
-    drawKeypoints(image, keypoints, target_img, keypointColor, DrawMatchesFlags::DRAW_OVER_OUTIMG);
+    Scalar keypointColor = Scalar(231, 84, 128);
+    //drawKeypoints(image, keypoints, target_img, keypointColor, DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 }
 
 struct Engine
@@ -229,9 +238,14 @@ void android_main(android_app* app)
              sprintf(buffer, "Display performance: %dx%d @ %.3f", drawing_frame.cols, drawing_frame.rows, fps);
              putText(drawing_frame, std::string(buffer), Point(8,64),
                          FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(0,255,0,255));
-             Mat target_img = drawing_frame.clone();
-             detect_and_draw_features(drawing_frame, target_img);
-             engine_draw_frame(&engine, target_img);
+             Mat target_img;
+             if (frame_num == 0) {
+                drawing_frame.convertTo(target_img, CV_8UC3);
+                auto cb_func = [&drawing_frame,&target_img] () { detect_and_draw_features(drawing_frame, target_img); };
+                boost::thread detection_thread(cb_func, "Feature detection");
+             }
+             engine_draw_frame(&engine, drawing_frame);
+             frame_num = (frame_num + 1) % DETECTION_FRAME;
         }
 
         if (time_queue.size() >= 2)

@@ -38,13 +38,10 @@ obj/local/armeabi-v7a/objs-debug/native_activity/nonfree_init.o: \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/asm/page.h \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/complex \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/vector \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/limits \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp \
  /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h \
@@ -132,19 +129,13 @@ jni/precomp.hpp:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm:
 
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath:
-
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/complex:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map:
 
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/vector:
-
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp:
-
-/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/limits:
 
 /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp:
 
