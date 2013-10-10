@@ -25,19 +25,22 @@
 
 using namespace cv;
 
-static Mat* detect_and_draw_features(Mat& image)
+static void detect_and_draw_features(Mat& image, Mat& target_img)
 {
     vector<KeyPoint> keypoints;
-    Mat descriptors;
+    Mat surf_descriptors;
+    Mat freak_descriptors;
     
-    SurfFeatureDetector detector;
-    detector.detect(image, keypoints);
-    detector.compute(image, keypoints, descriptors);
-
-    Mat* outputImg = new Mat();
-    Scalar keypointColor = Scalar(255,0,0);
-    drawKeypoints(image, keypoints, *outputImg, keypointColor, DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
-    return outputImg;
+    SurfFeatureDetector surf_detector;
+    FREAK freak_descriptor;
+    surf_detector.detect(image, keypoints);
+    //surf_detector.compute(image, keypoints, surf_descriptors);
+    //freak_descriptor.compute(image, keypoints, freak_descriptors);
+    
+    LOGI("Number of SURF keypoints %i\n", keypoints.size());
+    
+    Scalar keypointColor = Scalar(0,0,255);
+    drawKeypoints(image, keypoints, target_img, keypointColor, DrawMatchesFlags::DRAW_OVER_OUTIMG);
 }
 
 struct Engine
@@ -226,7 +229,9 @@ void android_main(android_app* app)
              sprintf(buffer, "Display performance: %dx%d @ %.3f", drawing_frame.cols, drawing_frame.rows, fps);
              putText(drawing_frame, std::string(buffer), Point(8,64),
                          FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(0,255,0,255));
-             engine_draw_frame(&engine, drawing_frame);
+             Mat target_img = drawing_frame.clone();
+             detect_and_draw_features(drawing_frame, target_img);
+             engine_draw_frame(&engine, target_img);
         }
 
         if (time_queue.size() >= 2)
