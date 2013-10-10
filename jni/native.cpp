@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <queue>
-#include <boost/thread>
+#include <pthread.h>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -24,13 +24,15 @@
 #define  LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-#define DETECTION_FRAME 15
-
-int frame_num = 0;
+#define DETECTION_FRAME 30
 
 using namespace cv;
 
-static void detect_and_draw_features(Mat& image, Mat& target_img)
+int frame_num = 0;
+Mat current_frame;
+pthread_t compute_thread;
+
+static void detect_and_draw_features(Mat& image)
 {
     vector<KeyPoint> keypoints;
     Mat surf_descriptors;
@@ -40,8 +42,8 @@ static void detect_and_draw_features(Mat& image, Mat& target_img)
     SurfFeatureDetector surf_detector(min_hessian);
     FREAK freak_descriptor;
     surf_detector.detect(image, keypoints);
-    //surf_detector.compute(image, keypoints, surf_descriptors);
-    //freak_descriptor.compute(image, keypoints, freak_descriptors);
+    surf_detector.compute(image, keypoints, surf_descriptors);
+    freak_descriptor.compute(image, keypoints, freak_descriptors);
     
     LOGI("Number of SURF keypoints %i\n", keypoints.size());
     for (int i = 0; i < keypoints.size(); i++) {
@@ -50,6 +52,11 @@ static void detect_and_draw_features(Mat& image, Mat& target_img)
     
     Scalar keypointColor = Scalar(231, 84, 128);
     //drawKeypoints(image, keypoints, target_img, keypointColor, DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+}
+
+void* compute_features(void*) {
+    detect_and_draw_features(current_frame);
+    pthread_exit(NULL);
 }
 
 struct Engine
@@ -241,8 +248,11 @@ void android_main(android_app* app)
              Mat target_img;
              if (frame_num == 0) {
                 drawing_frame.convertTo(target_img, CV_8UC3);
-                auto cb_func = [&drawing_frame,&target_img] () { detect_and_draw_features(drawing_frame, target_img); };
-                boost::thread detection_thread(cb_func, "Feature detection");
+                //auto cb_func = [&drawing_frame,&target_img] () { detect_and_draw_features(drawing_frame, target_img); };
+                //boost::thread t(cb_func, "Computation");
+                //pthread_join(compute_thread, NULL);
+                current_frame = drawing_frame;
+                pthread_create(&compute_thread, NULL, &compute_features, &drawing_frame);
              }
              engine_draw_frame(&engine, drawing_frame);
              frame_num = (frame_num + 1) % DETECTION_FRAME;
