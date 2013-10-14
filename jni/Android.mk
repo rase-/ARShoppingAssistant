@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-include ../../sdk/native/jni/OpenCV.mk
+include ../OpenCV-2.4.6-android-sdk/sdk/native/jni/OpenCV.mk
 OPENCV_INSTALL_MODULES:=on
 OPENCV_CAMERA_MODULES:=on
 
