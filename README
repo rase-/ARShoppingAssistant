@@ -1,16 +1,12 @@
 This is the directory structure that makes this work.
 
-tonykova@e65-5:~/workspace$ tree -L 2
+tonykova@tonykova:~/workspace$ tree -L 2
 .
 ├── adt
-│   ├── Boost-for-Android
-│   ├── eclipse
 │   ├── ndk
-│   ├── sdk
-│   └── vuforia-sdk
-├── ARShoppingAssistant
+│   └── sdk
+├── ARShoppingAssistant (the project itself)
 │   ├── AndroidManifest.xml
-│   ├── assets
 │   ├── bin
 │   ├── build.xml
 │   ├── compiled_lib
@@ -33,14 +29,32 @@ tonykova@e65-5:~/workspace$ tree -L 2
 │   ├── doc
 │   ├── samples
 │   └── sdk
-└── tess-two
-    ├── COPYING
-    ├── eyes-two
+├── tess-two
+│   ├── COPYING
+│   ├── eyes-two
+│   ├── README.md
+│   ├── tess-two
+│   └── tess-two-test
+└── zxing
+    ├── blackboxtest.results
+    ├── blackboxtest.sh
+    ├── cli
+    ├── cmake
+    ├── CMakeLists.txt
+    ├── core
+    ├── format
+    ├── ios_Prefix.pch
+    ├── ios.xcodeproj
+    ├── magick
+    ├── osx.xcodeproj
     ├── README.md
-    ├── tess-two
-    └── tess-two-test
+    ├── scons
+    |── SConscript
+    ├── SConstruct
+    └── zxing-cpp.xcodeproj
 
-28 directories, 9 files
+33 directories, 17 files
+
 
 Before using do this step
 
