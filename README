@@ -35,9 +35,14 @@ tonykova@e65-5:~/workspace$ tree -L 2
 │   └── sdk
 └── tess-two
     ├── COPYING
-        ├── eyes-two
-            ├── README.md
-                ├── tess-two
-                    └── tess-two-test
+    ├── eyes-two
+    ├── README.md
+    ├── tess-two
+    └── tess-two-test
 
-                    28 directories, 9 files
+28 directories, 9 files
+
+Before using do this step
+
+Step 1: create project, prepare files needed. 
+Copy the nonfree folder from opencv2.4.5\modules\nonfree\include\opencv2\ to OpenCV-2.4.5-android-sdk\sdk\native\jni\include\opencv2\. What we actually need are nonfree.hpp and features2d.hpp. But it's OK if you also copy other files. 
