@@ -7,7 +7,7 @@ OPENCV_INSTALL_MODULES:=on
 OPENCV_CAMERA_MODULES:=on
 
 LOCAL_STATIC_LIBRARIES += ../zxing/build/libzxing.a
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../zxing/build/core/src
+LOCAL_C_INCLUDES += /home/tonykova/workspace/zxing/build/core/src
 
 LOCAL_MODULE    := native_activity
 LOCAL_C_INCLUDES+= /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include

@@ -60,27 +60,29 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/memory.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/math.h \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h \
  /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/assert.h \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/complex \
  /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/imgproc.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/types_c.h \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui_c.h \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/nonfree.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/features2d.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/features2d/features2d.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h \
- /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/config.h
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/imgproc.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/types_c.h \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui_c.h \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/nonfree.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/features2d.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/features2d/features2d.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h \
+ ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/config.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/common/Counted.h \
+ /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream
 
 /home/tonykova/workspace/adt/ndk/sources/android/native_app_glue/android_native_app_glue.h:
 
@@ -204,13 +206,13 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/queue:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/types_c.h:
 
 /home/tonykova/workspace/adt/ndk/platforms/android-14/arch-arm/usr/include/assert.h:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm:
 
@@ -220,28 +222,32 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/map:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/imgproc.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/imgproc.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/types_c.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/imgproc/types_c.h:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui_c.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui_c.h:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/nonfree.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/nonfree.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/features2d.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/nonfree/features2d.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/features2d/features2d.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/features2d/features2d.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h:
 
-/home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/config.h:
+../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/config.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/common/Counted.h:
+
+/home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream:
