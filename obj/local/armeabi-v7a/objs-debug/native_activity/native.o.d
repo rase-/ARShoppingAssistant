@@ -82,7 +82,15 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
  ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h \
  ../OpenCV-2.4.6-android-sdk/sdk/native/jni/include/opencv2/flann/config.h \
  /home/tonykova/workspace/zxing/build/core/src/zxing/common/Counted.h \
- /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream
+ /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/Binarizer.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/LuminanceSource.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/common/Array.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/common/BitArray.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/ZXing.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/common/IllegalArgumentException.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/Exception.h \
+ /home/tonykova/workspace/zxing/build/core/src/zxing/common/BitMatrix.h
 
 /home/tonykova/workspace/adt/ndk/sources/android/native_app_glue/android_native_app_glue.h:
 
@@ -251,3 +259,19 @@ obj/local/armeabi-v7a/objs-debug/native_activity/native.o: jni/native.cpp \
 /home/tonykova/workspace/zxing/build/core/src/zxing/common/Counted.h:
 
 /home/tonykova/workspace/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/Binarizer.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/LuminanceSource.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/common/Array.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/common/BitArray.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/ZXing.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/common/IllegalArgumentException.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/Exception.h:
+
+/home/tonykova/workspace/zxing/build/core/src/zxing/common/BitMatrix.h:
