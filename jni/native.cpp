@@ -18,6 +18,7 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #include <opencv2/nonfree/features2d.hpp>
 
+// Remove these after testing
 #include <zxing/common/Counted.h>
 #include <zxing/Binarizer.h>
 
