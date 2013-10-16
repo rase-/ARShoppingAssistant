@@ -18,6 +18,8 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #include <opencv2/nonfree/features2d.hpp>
 
+#include <zxing/common/Counted.h>
+
 #define  LOG_TAG    "OCV:libnative_activity"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
