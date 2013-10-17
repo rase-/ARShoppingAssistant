@@ -12,9 +12,9 @@ LOCAL_STATIC_LIBRARIES += ../zxing/build/libzxing.a
 LOCAL_C_INCLUDES += /home/tonykova/workspace/zxing/build/core/src
 
 # Include tesseract
-include ../tess-two/tess-two/jni/Android.mk
+#include ../tess-two/tess-two/jni/Android.mk
 # Fix path
-LOCAL_PATH := $(call my-dir)
+#LOCAL_PATH := $(call my-dir)
 
 LOCAL_MODULE    := native_activity
 LOCAL_C_INCLUDES+= /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include
