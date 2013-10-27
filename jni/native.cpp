@@ -20,6 +20,7 @@
 
 // Remove these after testing
 #include <zxing/common/Array.h>
+//#include "baseapi.h"
 
 #define  LOG_TAG    "OCV:libnative_activity"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
