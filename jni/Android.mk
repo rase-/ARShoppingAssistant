@@ -18,8 +18,7 @@ LOCAL_C_INCLUDES += /home/tonykova/workspace/zxing/build/core/src
 #LOCAL_PATH := $(call my-dir)
 
 LOCAL_MODULE    := native_activity
-# Include OpenCV native jni include dir, path is different on a different
-# system (obviously)
+# Include OpenCV native jni include dir
 LOCAL_C_INCLUDES+= /home/tonykova/workspace/OpenCV-2.4.6-android-sdk/sdk/native/jni/include
 # Project specific stuff
 LOCAL_SRC_FILES := native.cpp nonfree_init.cpp precomp.cpp sift.cpp surf.cpp
