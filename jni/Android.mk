@@ -7,7 +7,7 @@ include ../OpenCV-2.4.6-android-sdk/sdk/native/jni/OpenCV.mk
 OPENCV_INSTALL_MODULES:=on
 OPENCV_CAMERA_MODULES:=on
 
-# Include ZXing, give path to cpp port directory, and remember to build it
+# Include ZXing: give path to cpp port directory, and remember to build it
 # first. I used SCons to build it, but cmake should work fine too
 LOCAL_STATIC_LIBRARIES += ../zxing/build/libzxing.a
 LOCAL_C_INCLUDES += /home/tonykova/workspace/zxing/build/core/src
