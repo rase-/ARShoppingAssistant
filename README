@@ -1,11 +1,9 @@
 This is the directory structure that makes this work.
 
-tonykova@tonykova:~/workspace$ tree -L 2
-.
 ├── adt
 │   ├── ndk
 │   └── sdk
-├── ARShoppingAssistant (the project itself)
+├── ARShoppingAssistant
 │   ├── AndroidManifest.xml
 │   ├── bin
 │   ├── build.xml
@@ -24,6 +22,11 @@ tonykova@tonykova:~/workspace$ tree -L 2
 │   ├── res
 │   ├── sift_opencv_android
 │   └── src
+├── backend
+│   ├── cpp
+│   ├── node
+│   ├── npm-debug.log
+│   └── README.md
 ├── OpenCV-2.4.6-android-sdk
 │   ├── apk
 │   ├── doc
@@ -38,6 +41,7 @@ tonykova@tonykova:~/workspace$ tree -L 2
 └── zxing
     ├── blackboxtest.results
     ├── blackboxtest.sh
+    ├── build
     ├── cli
     ├── cmake
     ├── CMakeLists.txt
@@ -49,12 +53,11 @@ tonykova@tonykova:~/workspace$ tree -L 2
     ├── osx.xcodeproj
     ├── README.md
     ├── scons
-    |── SConscript
+    ├── SConscript
     ├── SConstruct
     └── zxing-cpp.xcodeproj
 
-33 directories, 17 files
-
+37 directories, 19 files
 
 Before using do this step
 
