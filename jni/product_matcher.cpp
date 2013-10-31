@@ -1,14 +1,12 @@
 #include "product_matcher.h"
 
-ProductMatcher::ProductMatcher(cv::Mat& freak_descriptors, cv::Mat& surf_descriptors, std::string& imagebase_path)
-{
+ProductMatcher::ProductMatcher(cv::Mat& freak_descriptors, cv::Mat& surf_descriptors, std::string& imagebase_path) {
     this->freak_descriptors = freak_descriptors;
     this->surf_descriptors = surf_descriptors;
     this->imagebase_path = imagebase_path;
 }
 
-double ProductMatcher::match()
-{
+double ProductMatcher::match() {
     cv::BFMatcher matcher(cv::NORM_L2);
     std::vector<cv::DMatch> matches;
     matcher.match(freak_descriptors, freak_descriptors, matches);

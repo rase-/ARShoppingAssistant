@@ -36,8 +36,7 @@ int frame_num = 0;
 Mat current_frame;
 pthread_t compute_thread;
 
-static void detect_and_draw_features(Mat& image)
-{
+static void detect_and_draw_features(Mat& image) {
     vector<KeyPoint> keypoints;
     Mat surf_descriptors;
     Mat freak_descriptors;
