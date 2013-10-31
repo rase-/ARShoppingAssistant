@@ -1,6 +1,6 @@
 #include "product_matcher.h"
 
-ProductMatcher::ProductMatcher(Mat& freak_descriptors, Mat& surf_descriptors, std::string& imagebase_path)
+ProductMatcher::ProductMatcher(cv::Mat& freak_descriptors, cv::Mat& surf_descriptors, std::string& imagebase_path)
 {
     this->freak_descriptors = freak_descriptors;
     this->surf_descriptors = surf_descriptors;
@@ -9,5 +9,10 @@ ProductMatcher::ProductMatcher(Mat& freak_descriptors, Mat& surf_descriptors, st
 
 double ProductMatcher::match()
 {
-    // TODO: implement matching with OpenCV bruteforcematcher
+    cv::BFMatcher matcher(cv::NORM_L2);
+    std::vector<cv::DMatch> matches;
+    matcher.match(freak_descriptors, freak_descriptors, matches);
+    // do domething with them matches and actually match with stuff from the
+    // images we have in store
+    return 0.0;
 }

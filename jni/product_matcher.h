@@ -11,12 +11,12 @@
 class ProductMatcher
 {
   private:
-    Mat* freak_descriptors;
-    Mat* surf_descriptors;
+    cv::Mat freak_descriptors;
+    cv::Mat surf_descriptors;
     std::string imagebase_path;
 
   public:
-    ProductMatcher(Mat& freak_descriptors, Mat& surf_desciptors, std::string& imagebase_path);
+    ProductMatcher(cv::Mat& freak_descriptors, cv::Mat& surf_desciptors, std::string& imagebase_path);
     double match();
 };
 
