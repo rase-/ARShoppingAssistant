@@ -251,7 +251,7 @@ void android_main(android_app* app)
              if (frame_num == 0) {
                 drawing_frame.convertTo(target_img, CV_8UC3);
                 //auto cb_func = [&drawing_frame,&target_img] () { detect_and_draw_features(drawing_frame, target_img); };
-                //boost::thread t(cb_func, "Computation");
+                //std::thread t(cb_func, "Computation");
                 //pthread_join(compute_thread, NULL);
                 current_frame = drawing_frame;
                 pthread_create(&compute_thread, NULL, &compute_features, &drawing_frame);
