@@ -8,13 +8,15 @@
 #include <opencv2/nonfree/features2d.hpp>
 #include <string>
 
+// This could actually just be moved to the server man...
 class ProductMatcher
 {
   private:
     cv::Mat freak_descriptors;
     cv::Mat surf_descriptors;
     std::string imagebase_path;
-
+    
+    void loadProductInfo();
   public:
     ProductMatcher(cv::Mat& freak_descriptors, cv::Mat& surf_desciptors, std::string& imagebase_path);
     double match();
